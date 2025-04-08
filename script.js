@@ -30,8 +30,10 @@ function checarPalpite() {
     baixoOuAlto.textContent = "";
     setGameOver();
   } else if (contadorPalpite === 10) {
-    ultimoResultado.textContent = "!!!!!!!!!!!GAME OVER!!!!!!!!!!!";
-    baixoOuAlto.textContent = "";
+    (ultimoResultado.textContent =
+      "!!GAME OVER!!O NUMERO SECRETO E:," + numeroAleatorio),
+      (baixoOuAlto.textContent = "");
+    tentativas.innerHTML = tentativasMaximas;
     setGameOver();
   } else {
     ultimoResultado.textContent = "!!!!!ERRADO!!!!!";
@@ -74,4 +76,6 @@ function resetGame() {
   campoPalpite.focus();
   ultimoResultado.style.backgroundColor = "white";
   numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+  tentativas.textContent = 10;
+  tentativasMaximas = 10;
 }
